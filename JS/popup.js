@@ -1,14 +1,21 @@
-document.getElementById('start-timer').addEventListener('click', () => {
+document.addEventListener('DOMContentLoaded', function() {
+  // Evento para iniciar o Pomodoro
+  document.getElementById('start-timer').addEventListener('click', () => {
     chrome.runtime.sendMessage({ action: 'startPomodoro' });
   });
-  
-  document.getElementById('ajuda-btn').addEventListener('click', () => {
-    window.open(chrome.runtime.getURL('help.html'), '_blank');
+
+  // Evento para parar o Pomodoro
+  document.getElementById('stop-timer').addEventListener('click', () => {
+    chrome.runtime.sendMessage({ action: 'stopPomodoro' });
   });
-  
-  document.getElementById('configuracoes-btn').addEventListener('click', () => {
-    window.open(chrome.runtime.getURL('settings.html'), '_blank');
-  });
+
+  // Evento para abrir as configurações
+document.getElementById('configuracoes-btn').addEventListener('click', () => {
+  chrome.tabs.create({ url: chrome.runtime.getURL('../html/settings.html') });
+});
+
+});
+
   
   function updateTimerDisplay(timeRemaining) {
     const minutes = Math.floor(timeRemaining / 60000);

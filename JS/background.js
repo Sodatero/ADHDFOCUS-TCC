@@ -1,83 +1,46 @@
-let pomodoroTimer;
-let breakTimer;
-let timerIntervalId;
+let pomodoroInterval = null;
+let timeRemaining = 25 * 60 * 1000; // 25 minutos em milissegundos (tempo inicial do Pomodoro)
 
-let workDuration = 30 * 60 * 1000; // Default 30 minutos
-let breakDuration = 10 * 60 * 1000; // Default 10 minutos
-let timeRemaining = workDuration;
-
+// Ouvindo mensagens enviadas pelo popup.js
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'startPomodoro') {
     startPomodoro();
   }
+  
+  if (message.action === 'stopPomodoro') {
+    stopPomodoro();
+  }
+
+  if (message.action === 'updateTimer') {
+    sendResponse({ timeRemaining: timeRemaining });
+  }
 });
 
+// Função para iniciar o Pomodoro
 function startPomodoro() {
-  if (pomodoroTimer) clearTimeout(pomodoroTimer);
-  if (breakTimer) clearTimeout(breakTimer);
-  if (timerIntervalId) clearInterval(timerIntervalId);
+  // Impede de iniciar múltiplos timers ao mesmo tempo
+  if (pomodoroInterval) {
+    clearInterval(pomodoroInterval); // Para qualquer intervalo existente antes de começar um novo
+  }
 
-  chrome.action.setBadgeText({ text: 'Pomodoro' });
-  chrome.action.setBadgeBackgroundColor({ color: '#FF0000' });
-
-  chrome.notifications.create('', {
-    type: 'basic',
-    iconUrl: 'logopequeno.png',
-    title: 'ADHDFOCUS',
-    message: `Iniciando Pomodoro de ${workDuration / 60000} minutos!`
-  });
-
-  timeRemaining = workDuration;
-  updatePopupTimer();
-
-  pomodoroTimer = setTimeout(() => {
-    chrome.notifications.create('', {
-      type: 'basic',
-      iconUrl: 'logopequeno.png',
-      title: 'ADHDFOCUS',
-      message: `Tempo de trabalho concluído. Hora da pausa de ${breakDuration / 60000} minutos!`
-    });
-
-    chrome.action.setBadgeText({ text: 'Pausa' });
-    chrome.action.setBadgeBackgroundColor({ color: '#00FF00' });
-
-    timeRemaining = breakDuration;
-    updatePopupTimer();
-
-    breakTimer = setTimeout(() => {
-      chrome.notifications.create('', {
-        type: 'basic',
-        iconUrl: 'logopequeno.png',
-        title: 'ADHDFOCUS',
-        message: `Pausa concluída. Hora de voltar ao trabalho!`
-      });
-
-      chrome.action.setBadgeText({ text: '' });
-      chrome.action.setBadgeBackgroundColor({ color: '#000000' });
-
-      // Restart the cycle if desired
-      startPomodoro();
-
-    }, breakDuration);
-
-  }, workDuration);
-}
-
-function updatePopupTimer() {
-  if (timerIntervalId) clearInterval(timerIntervalId);
-
-  timerIntervalId = setInterval(() => {
+  timeRemaining = 25 * 60 * 1000; // Resetando o timer para 25 minutos
+  pomodoroInterval = setInterval(() => {
     timeRemaining -= 1000;
-    chrome.runtime.sendMessage({ action: 'updateTimer', timeRemaining: timeRemaining });
-
     if (timeRemaining <= 0) {
-      clearInterval(timerIntervalId);
+      clearInterval(pomodoroInterval); // Para o Pomodoro quando o tempo acabar
+      pomodoroInterval = null;
+      chrome.runtime.sendMessage({ action: 'pomodoroFinished' }); // Notifica o popup
+    } else {
+      chrome.runtime.sendMessage({ action: 'updateTimer', timeRemaining: timeRemaining });
     }
   }, 1000);
 }
 
-// Load settings
-chrome.storage.sync.get(['workDuration', 'breakDuration'], (items) => {
-  if (items.workDuration) workDuration = items.workDuration * 60 * 1000;
-  if (items.breakDuration) breakDuration = items.breakDuration * 60 * 1000;
-});
+// Função para parar o Pomodoro
+function stopPomodoro() {
+  if (pomodoroInterval) {
+    clearInterval(pomodoroInterval); // Para o timer
+    pomodoroInterval = null;
+    chrome.runtime.sendMessage({ action: 'pomodoroStopped' }); // Notifica o popup
+  }
+}
