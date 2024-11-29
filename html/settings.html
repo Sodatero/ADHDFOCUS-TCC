@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Configurações</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Configurações do Pomodoro</h1>
+    <div class="settings-section">
+      <label for="work-time">Tempo de Trabalho (minutos):</label>
+      <input type="number" id="work-time" value="30" min="1">
+    </div>
+    <div class="settings-section">
+      <label for="break-time">Tempo de Pausa (minutos):</label>
+      <input type="number" id="break-time" value="10" min="1">
+    </div>
+    <button class="button" id="save-settings">Salvar Configurações</button>
+    <a class="button" href="popup.html">voltar</a>
+  </div>
+  <script src="../JS/settings.js"></script>
+</body>
+</html>

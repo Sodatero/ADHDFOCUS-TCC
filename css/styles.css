@@ -1,0 +1,94 @@
+body {
+    margin: 10;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte limpa e moderna */
+    background-color: #ffffff; /* Fundo azul claro */
+    border-radius: 150px;
+    overflow: visible;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .container {
+    width: 300px;
+    padding: 20px; /* Adicionei um pouco mais de espaço interno para um visual mais confortável */
+    background-color: #ffffff; /* Fundo branco para o container */
+    border-radius: 10px; /* Bordas arredondadas para um visual mais suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra ao container para profundidade */
+  }
+  
+  h1, h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte consistente para cabeçalhos */
+    color: #333333; /* Cor escura para cabeçalhos */
+    font-size: 20px;
+    line-height: 3px;
+    margin-bottom: 10px;
+  }
+  
+  #timer {
+    text-align: center;
+    margin-bottom: 20px; /* Aumentei o espaço abaixo do timer */
+  }
+  
+  #timer-display {
+    font-size: 48px; /* Tamanho maior para um visual mais impactante */
+    font-weight: bold;
+    color: #333333; /* Cor escura para o display do timer */
+    position: relative;
+    top: -20px;
+  }
+  
+  .section {
+    margin-bottom: 20px; /* Espaçamento aumentado entre seções */
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555555; /* Cor de texto para labels */
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px; /* Espaçamento abaixo dos inputs */
+    box-sizing: border-box;
+    border: 1px solid #cccccc; /* Borda leve para inputs */
+    border-radius: 5px; /* Bordas arredondadas para inputs */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte consistente para inputs */
+  }
+  
+  .button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #473f4d; /* Cor de fundo azul para botões */
+    color: white;
+    border: none;
+    border-radius: 100px; /* Bordas arredondadas para botões */
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte consistente para botões */
+    font-size: 16px; /* Tamanho da fonte dos botões */
+    margin-bottom: 10px; /* Espaçamento abaixo dos botões */
+    z-index: 10;
+  }
+  
+  .button:hover {
+    background-color: #522d77; /* Cor de fundo do botão quando hover */
+  }
+
+  .logo {
+    width: 100px; /* Defina o tamanho adequado */
+    margin-bottom: 5px; /* Espaço abaixo da imagem */
+  }
+  hr {
+  width: 100%; /* Faz a linha ocupar toda a largura disponível */
+  }
+a.button{
+  display: inline-block;
+  position: relative;
+  left: -1px;
+  width: 277px;
+  
+}
