@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Evento para iniciar o Pomodoro
+  // Evento para começar o Pomodoro
   document.getElementById('start-timer').addEventListener('click', () => {
     chrome.runtime.sendMessage({ action: 'startPomodoro' });
   });
 
-  // Evento para parar o Pomodoro
+  // Evento para pausar o Pomodoro
   document.getElementById('stop-timer').addEventListener('click', () => {
     chrome.runtime.sendMessage({ action: 'stopPomodoro' });
   });
@@ -40,8 +40,8 @@ chrome.runtime.onMessage.addListener((message) => {
   if (message.action === 'updateSettings') {
     // Atualiza o timer com os novos tempos de trabalho e pausa
     chrome.storage.sync.get(['workDuration', 'breakDuration'], (settings) => {
-      const workDuration = settings.workDuration || 25; // Default: 25 minutos
-      const breakDuration = settings.breakDuration || 5; // Default: 5 minutos
+      const workDuration = settings.workDuration || 25;
+      const breakDuration = settings.breakDuration || 5;
       // Atualiza o display ou qualquer outro componente que precise dessas informações
       alert(`Configurações Atualizadas! Trabalho: ${workDuration} minutos, Pausa: ${breakDuration} minutos`);
     });

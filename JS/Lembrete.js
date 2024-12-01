@@ -16,7 +16,6 @@ function renderReminders() {
     reminderList.appendChild(li);
   });
 }
-
 // Função para editar um lembrete
 function editReminder(index) {
   const reminder = reminders[index];
@@ -26,33 +25,26 @@ function editReminder(index) {
   saveButton.textContent = "Atualizar Lembrete";
   saveButton.onclick = () => updateReminder(index);
 }
-
 // Função para salvar um novo lembrete
 saveButton.onclick = function () {
   const title = titleInput.value;
   const description = descriptionInput.value;
   const dateTime = datetimeInput.value;
-
   if (!title || !description || !dateTime) {
     alert("Por favor, preencha todos os campos.");
     return;
   }
-
   const newReminder = { title, description, dateTime };
   reminders.push(newReminder);
   localStorage.setItem("reminders", JSON.stringify(reminders));
-
   // Agendar notificação
   scheduleNotification(newReminder);
-
-  // Limpar campos e re-renderizar lista
   titleInput.value = "";
   descriptionInput.value = "";
   datetimeInput.value = "";
   saveButton.textContent = "Salvar Lembrete";
   renderReminders();
 };
-
 // Função para atualizar um lembrete existente
 function updateReminder(index) {
   reminders[index] = {
@@ -61,33 +53,26 @@ function updateReminder(index) {
     dateTime: datetimeInput.value,
   };
   localStorage.setItem("reminders", JSON.stringify(reminders));
-
   // Agendar notificação
   scheduleNotification(reminders[index]);
-
-  // Limpar campos e re-renderizar lista
   titleInput.value = "";
   descriptionInput.value = "";
   datetimeInput.value = "";
   saveButton.textContent = "Salvar Lembrete";
   renderReminders();
 }
-
 // Função para agendar a notificação
 function scheduleNotification(reminder) {
   const reminderDate = new Date(reminder.dateTime);
   const now = new Date();
-  const timeDiff = reminderDate - now; // Diferença de tempo até o lembrete
-
+  const timeDiff = reminderDate - now;
   if (timeDiff > 0) {
     // Agendar a notificação para o horário do lembrete
     setTimeout(() => {
-      // Verifica se a permissão para notificação foi concedida
       if (Notification.permission === "granted") {
-        // Exibir a notificação
         new Notification(reminder.title, {
           body: reminder.description,
-          icon: "icons/icon48.png", // Use um ícone da sua extensão
+          icon: "../image/logopequeno.png", 
         });
       } else {
         // Solicitar permissão para notificações
@@ -103,6 +88,4 @@ function scheduleNotification(reminder) {
     }, timeDiff);
   }
 }
-
-// Inicializar a extensão
 renderReminders();

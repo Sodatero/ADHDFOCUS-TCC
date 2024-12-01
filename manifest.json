@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "ADHDFOCUS",
     "version": "1.0",
-    "description": "Extensão desenvolvida para auxiliar pessoas com TDAH a se concentrar na internet.",
+    "description": "Plataforma incluvisa para melhorar a performance e autonomia de pessoas com TDAH, tornando aprendizagem acessível para todos.",
     "permissions": [
       "desktopCapture",
       "storage",
@@ -10,7 +10,7 @@
     ],
     "action": {
       "default_popup": "html/TelaInicial.html",
-      "default_icon": "image/icon.png"
+      "default_icon": "image/logopequeno.png"
     },
     
     "background": {

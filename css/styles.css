@@ -1,7 +1,7 @@
 body {
     margin: 10;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte limpa e moderna */
-    background-color: #ffffff; /* Fundo azul claro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #ffffff; 
     border-radius: 150px;
     overflow: visible;
     align-items: center;
@@ -10,15 +10,15 @@ body {
   
   .container {
     width: 300px;
-    padding: 20px; /* Adicionei um pouco mais de espaço interno para um visual mais confortável */
-    background-color: #ffffff; /* Fundo branco para o container */
-    border-radius: 10px; /* Bordas arredondadas para um visual mais suave */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra ao container para profundidade */
+    padding: 20px; 
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   }
   
   h1, h2 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte consistente para cabeçalhos */
-    color: #333333; /* Cor escura para cabeçalhos */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: #333333; 
     font-size: 20px;
     line-height: 3px;
     margin-bottom: 10px;
@@ -26,64 +26,64 @@ body {
   
   #timer {
     text-align: center;
-    margin-bottom: 20px; /* Aumentei o espaço abaixo do timer */
+    margin-bottom: 20px; 
   }
   
   #timer-display {
-    font-size: 48px; /* Tamanho maior para um visual mais impactante */
+    font-size: 48px; 
     font-weight: bold;
-    color: #333333; /* Cor escura para o display do timer */
+    color: #333333; 
     position: relative;
     top: -20px;
   }
   
   .section {
-    margin-bottom: 20px; /* Espaçamento aumentado entre seções */
+    margin-bottom: 20px; 
   }
   
   label {
     display: block;
     margin-bottom: 5px;
-    color: #555555; /* Cor de texto para labels */
+    color: #555555; 
   }
   
   input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px; /* Espaçamento abaixo dos inputs */
+    margin-bottom: 15px; 
     box-sizing: border-box;
-    border: 1px solid #cccccc; /* Borda leve para inputs */
-    border-radius: 5px; /* Bordas arredondadas para inputs */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte consistente para inputs */
+    border: 1px solid #cccccc; 
+    border-radius: 5px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
   }
   
   .button {
     display: block;
     width: 100%;
     padding: 12px;
-    background-color: #473f4d; /* Cor de fundo azul para botões */
+    background-color: #473f4d; 
     color: white;
     border: none;
-    border-radius: 100px; /* Bordas arredondadas para botões */
+    border-radius: 100px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte consistente para botões */
-    font-size: 16px; /* Tamanho da fonte dos botões */
-    margin-bottom: 10px; /* Espaçamento abaixo dos botões */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 16px; 
+    margin-bottom: 10px; 
     z-index: 10;
   }
   
   .button:hover {
-    background-color: #522d77; /* Cor de fundo do botão quando hover */
+    background-color: #522d77; 
   }
 
   .logo {
-    width: 100px; /* Defina o tamanho adequado */
-    margin-bottom: 5px; /* Espaço abaixo da imagem */
+    width: 100px; 
+    margin-bottom: 5px; 
   }
   hr {
-  width: 100%; /* Faz a linha ocupar toda a largura disponível */
+  width: 100%; 
   }
 a.button{
   display: inline-block;
