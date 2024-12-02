@@ -1,20 +1,20 @@
 {
-    "manifest_version": 3,
-    "name": "ADHDFOCUS",
-    "version": "1.0",
-    "description": "Plataforma incluvisa para melhorar a performance e autonomia de pessoas com TDAH, tornando aprendizagem acessível para todos.",
-    "permissions": [
-      "desktopCapture",
-      "storage",
-      "alarm"
-    ],
-    "action": {
-      "default_popup": "html/TelaInicial.html",
-      "default_icon": "image/logopequeno.png"
-    },
-    
-    "background": {
-      "service_worker": "JS/background.js"
-    }
-  }
+  "manifest_version": 3,
+  "name": "ADHDFOCUS",
+  "version": "1.0",
+  "description": "Plataforma inclusiva para melhorar a performance e autonomia de pessoas com TDAH, tornando aprendizagem acessível para todos.",
+  "permissions": [
+    "desktopCapture",
+    "storage",
+    "alarm"
+  ],
   
+  "action": {
+    "default_popup": "html/login.html",
+    "default_icon": "imagem/logopequeno.png"
+  },
+  
+  "background": {
+    "service_worker": "JS/background.js"
+  }
+}

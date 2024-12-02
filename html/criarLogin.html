@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta</title>
+    <link rel="stylesheet" href="../css/styleLogin.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="../imagem/logopequeno.png" alt="Logo" style="width: 100px;">
+        </div>
+        <h1><strong>Criar Conta</strong></h1>
+        <br>
+        <form id="criarLoginForm">
+            <div class="section">
+                <input type="text" id="nome" name="nome" placeholder="Nome" required>
+            </div>
+            <div class="section">
+                <input type="text" id="sobrnome" name="sobrnome" placeholder="Sobrenome" required>
+            </div>
+            <div class="section">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="section">
+                <input type="password" id="senha" name="senha" placeholder="Senha" required>
+            </div>
+            <div class="section">
+                <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirmação de Senha" required>
+            </div>
+            <button type="submit" class="button">Criar Conta</button>
+        </form>
+        <hr><br>
+        <div>
+            <a href="Login.html" class="link-criar-conta">Fazer Login</a>
+        </div>
+    </div>
+
+    <script src="../JS/criarLogin.js"></script>
+</body>
+</html>

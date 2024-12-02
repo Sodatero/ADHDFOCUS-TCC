@@ -1,19 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
     <title>Login</title>
+    <link rel="stylesheet" href="../css/styleLogin.css">
 </head>
 <body>
-    <h2>Login</h2>
-    <div class="Login">
-        login: <input type="text" name="login" id="login"><br>
+    <div class="container">
+            <img src="../imagem/logopequeno.png" alt="Logo" style="width: 140px;">
+        <h1><strong>ACESSAR</strong></h1>
         <br>
-        senha: <input type="text" name="senha" id="senha">
-        <input type="button" value="entrar">
-        <input type="button" value="cadastrar">
+        <form id="loginForm">
+            <div class="section">
+                <input type="text" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="section">
+                <input type="password" id="senha" name="senha" placeholder="Senha" required>
+                <a href="#" class="forgot-password">Esqueceu a senha?</a>
+            </div>
+            <br>
+            <button type="submit" class="button">Entrar</button>
+        </form>
+        <hr>
+        <br>
+        <form action="createLogin">
+            <a href="criarLogin.html" class="link-criar-conta">Criar Conta</a>
+        </form>
     </div>
-</body>
+    <script src="../JS/Login.js"></script>
 </html>

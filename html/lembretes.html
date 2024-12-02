@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/styles.css">
   <title>Lista de Lembretes</title>
+  <link rel="stylesheet" href="../css/Lembretes.css">
 </head>
 <body>
-  <img src="../image/logopequeno.png" alt="Logo da Extensão" class="logo">
-  <h1>Lembretes</h1>
-  <div id="form-container">
-    <input type="text" id="reminder-title" placeholder="Título do lembrete" />
-    <textarea id="reminder-description" placeholder="Descrição do lembrete"></textarea>
-    <input type="datetime-local" id="reminder-datetime" />
-    <button id="save-btn">Salvar Lembrete</button>
+  <div class="container">
+    <img src="../imagem/logopequeno.png" alt="Logo" class="logo">
+    <h1><strong>LEMBRETES</strong></h1><br>
+    <div id="form-container">
+      <input type="text" id="reminder-title" placeholder="Título" />
+      <textarea id="reminder-description" placeholder="Descrição"></textarea>
+      <input type="datetime-local" id="reminder-datetime" />
+      <a class="button" id="save-btn" href="TelaInicial.html">Salvar Lembrete</a>
+    </div>
+    <ul id="reminder-list"></ul>
+    <hr>
+    <a class="button" href="TelaInicial.html">Cancelar e Voltar</a>
   </div>
-  <ul id="reminder-list"></ul>
-  <a class="button" href="TelaInicial.html">Cancelar e voltar</a>
   <script src="../JS/Lembrete.js"></script>
 </body>
 </html>
